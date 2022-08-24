@@ -1,10 +1,12 @@
 import PropTypes from 'prop-types';
 import { useFetchGifs } from "../hooks/useFetchGifs";
-import { GifItem, Spinner } from '../components';
+import { GifItem, Spinner, Paginator } from '../components';
+import { useState } from 'react';
 
 export const GifGrid = ({ category }) => {
   
-  const { images, isLoading } = useFetchGifs(category);
+  const [ currentPage, setCurrentPage ] = useState(1);
+  const { images, isLoading, totalPages } = useFetchGifs(category, currentPage);
 
   return (
     <div className='result-container'>
@@ -12,6 +14,7 @@ export const GifGrid = ({ category }) => {
       <div className="result-container__card-grid">
         {images.map(( image ) => ( <GifItem key={image.id} {...image} /> ))}
       </div>
+      <Paginator totalPages={totalPages} changePage={ (value) => setCurrentPage(value) }/>
     </div>
   )
 };

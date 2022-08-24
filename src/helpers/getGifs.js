@@ -1,5 +1,5 @@
 export const getGifs = async ( category ) => {
-  const url = `https://api.giphy.com/v1/gifs/search?api_key=db6VqtFoSWkixuI0gYmzk9VHdjVLgEWa&q=${category}&limit=10`;
+  const url = `https://api.giphy.com/v1/gifs/search?api_key=db6VqtFoSWkixuI0gYmzk9VHdjVLgEWa&q=${category}&limit=50`;
   const resp = await fetch( url );
   const { data, pagination } = await resp.json();
   
@@ -9,8 +9,7 @@ export const getGifs = async ( category ) => {
     url: gif.images.downsized_medium.url
   }));
 
-  const totalImages = pagination.count;
-  console.log(gifs)
-
-  return gifs;
+  const countImages = pagination.count;
+  
+  return [gifs, countImages];
 }

@@ -2,7 +2,8 @@ import { useState } from 'react';
 import { AddCategory, GifGrid, NavSearch } from './components'
 
 export const GifExpertApp = () => {
-  const [category, setCategory] = useState('')
+  const [category, setCategory] = useState('');
+  
     
   return (
     <>
