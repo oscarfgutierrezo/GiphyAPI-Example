@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { useFetchGifs } from "../hooks/useFetchGifs";
-import { GifItem } from "./GifItem";
+import { GifItem, Spinner } from '../components';
 
 export const GifGrid = ({ category }) => {
   
@@ -8,7 +8,7 @@ export const GifGrid = ({ category }) => {
 
   return (
     <div className='result-container'>
-      {isLoading && (<h2>Cargando...</h2>)}
+      {isLoading && <Spinner />}
       <div className="result-container__card-grid">
         {images.map(( image ) => ( <GifItem key={image.id} {...image} /> ))}
       </div>
