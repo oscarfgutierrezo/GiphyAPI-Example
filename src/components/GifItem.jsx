@@ -21,10 +21,13 @@ export const GifItem = ({ title, id, url }) => {
   return (
     <div className="card">
       <img src={url} alt={title} />
-      <button onClick={copyLink} className={`${copiedLink ? 'card__copy-link--copy' : 'card__copy-link--no-copy'} card__copy-link`}>
-        {!copiedLink && <i className="fa-solid fa-link"></i>}
-        <p>{copiedLink ? 'Copied Link' : 'Copy Gif Link'}</p>
-      </button>
+      <div className='card__btn-container'>
+        <button onClick={copyLink} className={`${copiedLink ? 'card__copy-link--copy' : 'card__copy-link--no-copy'} card__copy-link`}>
+          {!copiedLink && <i className="fa-solid fa-link"></i>}
+          <p>{copiedLink ? 'Link Copied!' : 'Copy Link'}</p>
+        </button>
+        <a href={url} target='_blank'><i class="fa-solid fa-arrow-up-right-from-square"></i>Visit Page</a>
+      </div>
     </div>
   )
 }
