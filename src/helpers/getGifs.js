@@ -6,9 +6,8 @@ export const getGifs = async ( category ) => {
   const gifs = data.map( gif => ({
     id: gif.id,
     title: gif.title,
-    url: gif.images.downsized_medium.url
+    url: gif.images.preview_webp.url
   }));
-
   const countImages = pagination.count;
   
   return [gifs, countImages];

@@ -13,7 +13,7 @@ export const Paginator = ( {totalPages, currentPage, setCurrentPage} ) => {
   return (
     <div className="paginator-container">
       {pagesNumber.map(number => ( 
-        <button className={`${number === currentPage && 'paginator-container__button--active'} paginator-container__button`} value={number} onClick={handleClick} >{number}</button> 
+        <button className={`${number === currentPage && 'paginator-container__button--active'} paginator-container__button`} value={number} onClick={handleClick} key={number} >{number}</button> 
       ))}
     </div>
   )
