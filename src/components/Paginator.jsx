@@ -1,4 +1,4 @@
-export const Paginator = ( {totalPages, changePage} ) => {
+export const Paginator = ( {totalPages, currentPage, setCurrentPage} ) => {
   
   const pagesNumber = [];
   for (let index = 1; index <= totalPages; index++) {
@@ -7,13 +7,13 @@ export const Paginator = ( {totalPages, changePage} ) => {
 
   const handleClick = (e) => {
     const selectPage = Number(e.target.value);
-    changePage(selectPage);
+    setCurrentPage(selectPage);
   }
   
   return (
     <div className="paginator-container">
       {pagesNumber.map(number => ( 
-        <button value={number} onClick={handleClick} key={number} >{number}</button> 
+        <button className={`${number === currentPage && 'paginator-container__button--active'} paginator-container__button`} value={number} onClick={handleClick} >{number}</button> 
       ))}
     </div>
   )

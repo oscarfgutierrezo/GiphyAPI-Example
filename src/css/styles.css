@@ -47,7 +47,8 @@ header p {
 form {
   position: relative;
   width: 100%;
-  margin-top: 5rem;
+  max-width: 50rem;
+  margin: 5rem auto 0;
   padding: 1rem 1.5rem;
   display: flex;
   align-items: center;
@@ -133,7 +134,8 @@ form input::placeholder {
 /* <GifGrid /> */
 
 .result-container {
-  margin-top: 6rem;
+  max-width: 144rem;
+  margin: 6rem auto 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -163,6 +165,7 @@ form input::placeholder {
 .card {
   height: 25rem;
   width: 100%;
+  max-width: 28rem;
   border-radius: 1rem;
   display: flex;
   flex-direction: column;
@@ -185,6 +188,7 @@ form input::placeholder {
   font-weight: 600;
   border: none;
   color: #0074A2;
+  cursor: pointer;
 }
 
 .card__copy-link--no-copy {
@@ -193,7 +197,6 @@ form input::placeholder {
 
 .card__copy-link--copy {
   background-color: #FFBB61;
-  color: #000;
 }
 
 
@@ -208,7 +211,7 @@ form input::placeholder {
   gap: 1rem;
 }
 
-.paginator-container button {
+.paginator-container__button {
   width: 3rem;
   height: 3rem;
   border-radius: 0.5rem;
@@ -216,6 +219,18 @@ form input::placeholder {
   font-size: 1.6rem;
   font-weight: 600;
   color: #0074A2;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+  transition-duration: 0.3s;
+  cursor:pointer
+}
+
+.paginator-container__button:hover {
+  background-color: #FFBB61;
+}
+
+.paginator-container__button--active {
+  background-color: #FFBB61;
+  box-shadow: none;
 }
 
 

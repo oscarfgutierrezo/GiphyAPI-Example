@@ -14,7 +14,7 @@ export const GifGrid = ({ category }) => {
       <div className="result-container__card-grid">
         {images.map(( image ) => ( <GifItem key={image.id} {...image} /> ))}
       </div>
-      <Paginator totalPages={totalPages} changePage={ (value) => setCurrentPage(value) }/>
+      <Paginator totalPages={totalPages} setCurrentPage={ (value) => setCurrentPage(value)} currentPage={currentPage}/>
     </div>
   )
 };
